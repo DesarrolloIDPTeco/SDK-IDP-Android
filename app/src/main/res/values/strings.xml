@@ -2,19 +2,19 @@
     <string name="app_name">Flow Music</string>
 
     <!-- OAuth 2.0 Client Details -->
-    <string name="forgerock_oauth_client_id" translatable="false">oidc-flowmusicapk-dev</string>
-    <string name="forgerock_oauth_redirect_uri" translatable="false">https://idpsesiond.telecom.com.ar/callback</string>
+    <string name="forgerock_oauth_client_id" translatable="false"> ClientId </string>
+    <string name="forgerock_oauth_redirect_uri" translatable="false"> Redirect Uri </string>
     <string name="forgerock_oauth_scope" translatable="false">openid profile</string>
     <integer name="forgerock_oauth_threshold" translatable="false">30</integer>
 
     <!-- AM Instance Details -->
-    <string name="forgerock_url" translatable="false">https://idpsesiond.telecom.com.ar/openam</string>
+    <string name="forgerock_url" translatable="false">https://example.com.ar/openam</string>
     <string name="forgerock_cookie_name" translatable="false">iPlanetDirectoryPro</string>
-    <string name="forgerock_realm" translatable="false">convergente</string>
+    <string name="forgerock_realm" translatable="false"> Realm </string>
     <integer name="forgerock_timeout" translatable="false">30</integer>
 
     <!-- AM Tree Details -->
-    <string name="forgerock_auth_service" translatable="false">sdkAuthenticationTree</string>
+    <string name="forgerock_auth_service" translatable="false"> Tree </string>
     <string name="textview">TextView</string>
     <string name="prueba">Prueba</string>
 </resources>
