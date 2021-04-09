@@ -15,6 +15,4 @@
 
     <!-- AM Tree Details -->
     <string name="forgerock_auth_service" translatable="false"> Tree </string>
-    <string name="textview">TextView</string>
-    <string name="prueba">Prueba</string>
 </resources>
