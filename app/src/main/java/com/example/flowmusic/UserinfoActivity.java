@@ -1,7 +1,6 @@
-package com.example.forgerocksdktutorial;
+package com.example.flowmusic;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
 
 import com.nimbusds.jwt.JWTParser;
 
@@ -13,11 +12,9 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.forgerock.android.auth.AccessToken;
-import org.forgerock.android.auth.FRDevice;
 import org.forgerock.android.auth.FRListener;
 import org.forgerock.android.auth.FRUser;
 import org.forgerock.android.auth.UserInfo;
-import org.forgerock.android.auth.exception.AuthenticationRequiredException;
 import org.json.JSONException;
 import org.json.JSONObject;
 

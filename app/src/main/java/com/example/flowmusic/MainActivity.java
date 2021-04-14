@@ -1,12 +1,9 @@
-package com.example.forgerocksdktutorial;
+package com.example.flowmusic;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 import org.forgerock.android.auth.FRListener;
 import org.forgerock.android.auth.FRUser;

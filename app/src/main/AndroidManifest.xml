@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.forgerocksdktutorial">
+    package="com.example.flowmusic"
+    android:sharedUserId="com.example.singleSignOn">
 
     <application
-        android:name=".SDKTutorialApp"
+        android:name="com.example.flowmusic.SDKTutorialApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,14 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForgeRockSDKTutorial">
-        <activity android:name=".UserinfoActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.flowmusic.UserinfoActivity"></activity>
+        <activity android:name="com.example.flowmusic.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name="org.forgerock.android.auth.authenticator.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/forgerock_authenticator" />
+        </service>
     </application>
 
 </manifest>

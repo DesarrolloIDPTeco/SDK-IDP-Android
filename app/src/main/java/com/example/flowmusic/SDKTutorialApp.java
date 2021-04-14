@@ -1,4 +1,4 @@
-package com.example.forgerocksdktutorial;
+package com.example.flowmusic;
 
 import android.app.Application;
 

@@ -13,6 +13,10 @@
     <string name="forgerock_realm" translatable="false"> Realm </string>
     <integer name="forgerock_timeout" translatable="false">30</integer>
 
+    <!-- Single Sign-On Details -->
+    <string name="forgerock"> Client </string>
+    <string name="forgerock_account_name" translatable="false">IDP</string>
+
     <!-- AM Tree Details -->
     <string name="forgerock_auth_service" translatable="false"> Tree </string>
 </resources>
