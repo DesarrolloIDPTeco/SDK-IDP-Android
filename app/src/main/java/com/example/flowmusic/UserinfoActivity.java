@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.nimbusds.jwt.JWTParser;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -42,27 +43,12 @@ public class UserinfoActivity extends AppCompatActivity {
 
 
 //      Cuando inicia sesion
-        FRUser.getCurrentUser().getUserInfo(new FRListener<UserInfo>() {
-            @Override
-            public void onSuccess(UserInfo result) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        userInfoTxt.setText("Bienvenido: \n" + result.getSub());
-                    }
-                });
-            }
-
-            @Override
-            public void onException(Exception e) {
-                System.err.println("e = " + e.getMessage());
-            }
-        });
         FRUser.getCurrentUser().getAccessToken(new FRListener<AccessToken>() {
             @Override
             public void onSuccess(AccessToken result) {
                 PERIODO = result.getExpiresIn() * 1000;
                 runOnUiThread(new Runnable() {
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void run() {
                         try {
@@ -70,6 +56,9 @@ public class UserinfoActivity extends AppCompatActivity {
                             textAccessToken.setText(accesToken.toString(4));
                             JSONObject idToken = new JSONObject(JWTParser.parse(result.getIdToken()).getJWTClaimsSet().toString());
                             textIdToken.setText(idToken.toString(4));
+                            String sub = idToken.getString("sub");
+                            userInfoTxt.setText("Bienvenido: \n" + sub);
+
                         } catch (JSONException | ParseException e) {
                             e.printStackTrace();
                         }
@@ -91,7 +80,6 @@ public class UserinfoActivity extends AppCompatActivity {
             }
 
         });
-
 
 
 //      Refresh Token
@@ -117,6 +105,8 @@ public class UserinfoActivity extends AppCompatActivity {
                                     textAccessToken.setText(accesToken.toString(4));
                                     JSONObject idToken = new JSONObject(JWTParser.parse(result.getIdToken()).getJWTClaimsSet().toString());
                                     textIdToken.setText(idToken.toString(4));
+                                    String sub = idToken.getString("sub");
+                                    userInfoTxt.setText("Bienvenido: \n" + sub);
                                 } catch (JSONException | ParseException e) {
                                     e.printStackTrace();
                                 }
@@ -128,36 +118,14 @@ public class UserinfoActivity extends AppCompatActivity {
                                 }, PERIODO);
                             }
                         });
-
-
                     }
 
                     @Override
                     public void onException(Exception e) {
 
                     }
-
                 });
-                FRUser.getCurrentUser().getUserInfo(new FRListener<UserInfo>() {
-                    @Override
-                    public void onSuccess(UserInfo result) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                userInfoTxt.setText("Bienvenido: \n" + result.getSub());
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onException(Exception e) {
-                        System.err.println("e = " + e.getMessage());
-                    }
-                });
-
-
             }
-
         });
 
 //      Logout
